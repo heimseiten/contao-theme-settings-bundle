@@ -2,10 +2,7 @@
     "name": "heimseiten/contao-theme-settings-bundle",
     "description": "Erlaubt Einstellungen wie Hauptfarbe, Schriftgröße usw. im Theme.",
     "keywords": [
-        "contao",
-        "bundle",
-        "tag 3",
-        "tag 4"
+        "variablen"
     ],
     "type": "contao-bundle",
     "license": "GPL-3.0-or-later",
@@ -47,6 +44,5 @@
     },
     "extra": {
         "contao-manager-plugin": "Heimseiten\\ContaoThemeSettingsBundle\\ContaoManager\\Plugin"
-    },
-    "version": "0.0.1"
+    }
 }
