@@ -31,14 +31,14 @@ $GLOBALS['TL_DCA']['tl_theme']['fields']['secondaryColor'] = [
 $GLOBALS['TL_DCA']['tl_theme']['fields']['fontSize'] = [
     'label'     => &$GLOBALS['TL_LANG']['tl_theme']['fontSize'],
     'inputType' => 'text',
-    'eval'      => array('tl_class'=>'w50 clr'),
+    'eval'      => array('tl_class'=>'w50'),
     'sql'       => "text NULL"
 ];  
 
 $GLOBALS['TL_DCA']['tl_theme']['fields']['fontSizeSmall'] = [
     'label'     => &$GLOBALS['TL_LANG']['tl_theme']['fontSizeSmall'],
     'inputType' => 'text',
-    'eval'      => array('tl_class'=>'w50'),
+    'eval'      => array('tl_class'=>'w50 clr'),
     'sql'       => "text NULL"
 ];  
 
