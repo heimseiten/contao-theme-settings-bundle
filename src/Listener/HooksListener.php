@@ -24,25 +24,23 @@ class HooksListener
                     $theme_id = $tl_layout[0]['pid'];
                 }
                 if ($theme_id) {
-                    $tl_theme = \Database::getInstance()->query("SELECT id, primaryColor, secondaryColor, fontSize FROM `tl_theme` WHERE id =". $theme_id ." ;")->fetchAllAssoc();
+                    $tl_theme = \Database::getInstance()->query("SELECT id, primaryColor, secondaryColor, fontSize, fontSizeSmall, fontSizeBig FROM `tl_theme` WHERE id =". $theme_id ." ;")->fetchAllAssoc();
                     if (count($tl_layout) >= 1) {
-                        $primary_color = $tl_theme[0]['primaryColor'];
-                        $secondary_color = $tl_theme[0]['secondaryColor'];
-                        $font_size = $tl_theme[0]['fontSize'];
+                        $primary_color =    $tl_theme[0]['primaryColor'];
+                        $secondary_color =  $tl_theme[0]['secondaryColor'];
+                        $font_size =        $tl_theme[0]['fontSize'];
+                        $font_size_small =  $tl_theme[0]['fontSizeSmall'];
+                        $font_size_big =    $tl_theme[0]['fontSizeBig'];
                     }
                 }
             }
             $settings = '';
             
-            if ($primary_color) {
-                $settings .= '--primary_color: #' . $primary_color . ';';
-            }
-            if ($secondary_color) {
-                $settings .= '--secondary_color: #' . $secondary_color . ';';
-            }
-            if ($font_size) {
-                $settings .= '--font_size: ' . $font_size . ';';
-            }
+            if ($primary_color) {   $settings .= '--primary_color: #' . $primary_color . ';'; }
+            if ($secondary_color) { $settings .= '--secondary_color: #' . $secondary_color . ';'; }
+            if ($font_size) {       $settings .= '--font_size: ' . $font_size . ';'; }
+            if ($font_size_small) { $settings .= '--font_size_small: ' . $font_size_small . ';'; }
+            if ($font_size_big) {   $settings .= '--font_size_big: ' . $font_size_big . ';'; }
             
             if ($settings) {
                 $template->stylesheets = '<style> body { '. $settings . '; } </style>' . $template->stylesheets;
